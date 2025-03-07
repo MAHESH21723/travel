@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Tour</title>
+    <style>
+        /* Background Video Styling */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Centered Booking Form */
+        /* Booking Container Styling */
+.booking-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%; /* Full width */
+}
+
+/* Form Styling */
+form {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    width: 60%; /* Makes the form larger */
+    max-width: 800px; /* Prevents it from getting too wide */
+    min-width: 400px; /* Prevents it from getting too small */
+}
+
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Book Now Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Hover Effect */
+        button:hover {
+            background: #ff4500;
+            transform: scale(1.05);
+        }
+
+        /* Click Effect */
+        button:active {
+            background: #ff2200;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="assests/8e8f23be5c354524f6ee91b2b568a130.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="booking-container">
+        <form id="bookingForm">
+            <h2>Book Your Tour</h2>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="fromLocation" placeholder="From Location" required>
+            <input type="text" id="toLocation" placeholder="To Location" required>
+            <input type="date" id="tourDate" required>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+</body>
+</html>

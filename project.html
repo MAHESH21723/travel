@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travels&tourism</title>
+    <style>
+        .loader {
+         border: 16px solid #f3f3f3;
+         border-radius: 50%;
+         border-top: 16px solid #3498db;
+         width: 120px;
+         height: 120px;
+         -webkit-animation: spin 2s linear infinite; 
+         animation: spin 2s linear infinite;
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body.no-scroll {
+    overflow: hidden; 
+    height: 100vh; 
+}
+
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9999;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-out;
+}
+
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomIn 10s linear forwards; 
+}
+
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1); 
+    }
+}
+
+
+.main-content {
+    display: none;
+    opacity: 0;
+    text-align: center;
+    padding: 50px;
+    transition: opacity 1s ease-in;
+}
+
+
+        body {
+             img {
+                float: right;
+                text-align: left;
+                width : 30% ;
+             }
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 20vh; 
+    background-color: rgba(2, 189, 252, 0.807); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.header-title {  
+    font-family: Georgia, serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8); 
+
+}
+
+ 
+ .airplane {
+            position: absolute;
+            top: 20px;
+            right: -200px; 
+            width: 150px;
+            opacity: 0; 
+        }
+
+        @keyframes flyAcross {
+            0% {
+                right: -200px;
+                opacity: 1;
+            }
+            100% {
+                right: 100%;
+                opacity: 1;
+            }
+        }
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+p {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgb(5, 0, 0); 
+}
+
+
+.content {
+    position: relative;
+    z-index: 1; 
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5rem;
+}
+.slideshow-container {
+    width: 30%;
+    float: right;
+    position: relative;
+}
+
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+
+        nav {
+            background-color: blue;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        nav a:hover {
+            background-color: #08b3f6;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: right;
+            padding: 10px 0;
+            position: static;
+            bottom: 3em;
+            height: 3%;
+            width: 100%;
+        }
+       
+    </style>
+</head>
+<body class="no-scroll">
+    <div class="video-container">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="D:\travels\assests\93f2ac9d9d2b9059cd28fe83f4f002db.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+     <header class="hero-header">
+        <h1 style="color: rgb(10, 10, 10);">JEYA SURIYA TOURISM</h1>
+    </header>
+
+    
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="assests/f148af35888e8da7d3dd57345cba7758.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="destination_orginsal.html">Destinations</a>
+    <a href="visitweb.htm">Bookings</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>HOME</h2>
+    <h2> Welcome to JEYA SURIYA's travels and tourism </h2>
+    <div class="slideshow-container">
+        <div class="slide fade">
+        <img src="assests/slide_1.jfif" alt="Image 1" style="float: right;">
+    
+        </div>
+        <div class="slide fade">
+            <img src="assests/slide_2.jfif" alt="Image 2">
+
+        </div>
+        <div class="slide fade">
+            <img src="assests/slide_3.jfif" alt="Image 3">
+        </div>
+    </div>
+</div>
+
+    <p> india's best traveling company. award holder of <br>
+        "BEST FAMILY TOUR PLANNER 🏆"</p>
+        <p>Jeya Suriya's Travels and Tourism is not just a company; it's an experience<br> waiting to unfold. With a legacy of excellence spanning over two decades, we have <br> synonymous with unparalleled service and unforgettable journeys. Whether it's exploring the vibrant<br> streets of bustling cities, embarking on breathtaking adventures amidst nature's wonders,<br> or indulging in luxurious getaways to exotic locales, we craft each itinerary with<br> meticulous attention to detail, ensuring every moment is filled with enchantment and discovery.<br> Our team of passionate travel experts strives to exceed expectations, curating bespoke <br> tailored to each traveler's desires. From seamless logistics to immersive cultural encounters,<br> we go above and beyond to transform dreams into cherished memories. With Jeya Suriya's Travels <br> Tourism, the world is yours to explore, and every journey is an extraordinary chapter waiting <br>to be written.</p>
+    <p>traveling is a best medicine for stress. all kind of packages are availabe <br>
+    for everyone. best offers are availale for all seasons. trvelling locationa are <br>
+coustamized according to the passengers comfort. easy booking for everyone. <br>
+online registeration available.  </p>
+<p>A distinguished tourist company isn't just about facilitating journeys; it's about crafting unforgettable<br> experiences that linger in the hearts and minds of travelers long after they return home.<br> A truly exceptional tourist company embodies a commitment to excellence, seamlessly blending <br> with genuine hospitality. From the moment of inquiry to the final farewell, every interaction is infused<br> with warmth, professionalism, and a dedication to exceeding expectations. Such companies meticulously curate itineraries<br> that showcase the essence of each destination, striking a harmonious balance between must-see landmarks and hidden gems off<br> the beaten path. Their knowledgeable guides are not just storytellers but ambassadors, offering insights<br> that transform sightseeing into profound cultural immersion. Moreover, they prioritize sustainability, ensuring<br> that their operations contribute positively to local communities and preserve the natural beauty of the places they visit.<br> In the realm of good tourist companies, every journey is not just a vacation but an enriching odyssey that leaves a lasting<br> impression on the traveler's soul.</p>
+<p>Traveling is a gateway to endless discovery, a journey that transcends mere movement from one place to another. It's an exploration of both the world around us and the depths of our own souls. Every step taken opens up a new vista, every encounter enriches our understanding of humanity's diverse tapestry. From the majestic peaks of towering mountains to the tranquil shores of pristine beaches, traveling offers an escape from the ordinary, a chance to immerse ourselves in the extraordinary. It's a symphony of sights, sounds, and sensations, awakening our senses to the beauty and wonder that abound. Whether traversing ancient cobblestone streets steeped in history or venturing into untamed wilderness teeming with life, each destination has its own story to tell, its own lessons to impart. In the embrace of travel, we find liberation, inspiration, and the promise of endless horizons waiting to be explored.</p>
+<p>local guid will be allocated. lots of affordable packages are available.<br>
+     best packages available for family trips. just dial the contact number <br> 
+     & make your trip </p> 
+     <h2>TERMS AND CONDITION:</h2>
+     <p>Booking and Payment: All bookings made with jeyasuriyatravels are subject to availability and confirmation. A deposit or full payment may be required at the time of booking, and the remaining balance must be settled prior to the commencement of the tour.<br>
+
+        Cancellation and Refunds: Cancellations made by the traveler are subject to cancellation fees, which vary depending on the time of cancellation and the terms of the specific tour package. Refunds, if applicable, will be processed in accordance with our cancellation policy.<br>
+        
+        Changes and Amendments: Any changes or amendments to bookings must be requested in writing and are subject to availability and approval by jeyasuriyatravels. Additional charges may apply for changes made after the booking confirmation.<br>
+        
+        Travel Documents: It is the traveler's responsibility to ensure that all necessary travel documents, including passports, visas, and vaccination certificates, are valid and obtained before the departure date. jeyasuriyatravels is not liable for any consequences resulting from inadequate travel documentation.<br>
+        
+        Health and Safety: Travelers are responsible for maintaining their own health and safety during the tour. It is recommended to obtain travel insurance covering medical expenses, trip cancellation, and personal liability. jeyasuriyatravels reserves the right to refuse participation in the tour to any traveler deemed unfit for travel due to health or safety reasons.<br>
+        
+        Responsibility: While every effort is made to ensure the safety and satisfaction of our travelers, jeyasuriyatravels acts only as an intermediary between clients and third-party service providers, such as airlines, hotels, and tour operators. We are not liable for any loss, injury, or damage incurred during the tour, including but not limited to accidents, delays, or cancellations.<br>
+        
+        Tour Itineraries: Tour itineraries provided by jeyasuriyatravels are subject to change without prior notice due to unforeseen circumstances, including but not limited to weather conditions, natural disasters, or force majeure events. We reserve the right to alter or cancel any part of the tour itinerary for the safety and enjoyment of our travelers.<br>
+        
+        Code of Conduct: Travelers are expected to adhere to a code of conduct that respects local customs, cultures, and laws at all times during the tour. jeyasuriyatravels reserves the right to remove any traveler from the tour without refund if their behavior is deemed disruptive, offensive, or illegal.<br>
+        
+        Complaints and Disputes: Any complaints or disputes arising during the tour should be reported to the tour leader or jeyasuriyatravels representative as soon as possible to allow prompt resolution. If a satisfactory resolution cannot be reached, travelers may escalate their complaint in writing to jeyasuriya10001@gmail.com.<br>
+        
+        Governing Law: These terms and conditions are governed by the laws of [Jurisdiction], and any disputes arising from them shall be subject to the exclusive jurisdiction of the courts of [Jurisdiction].<br>
+        
+        By booking a tour with jeyasuriyatravels, travelers acknowledge that they have read, understood, and agree to abide by these terms and conditions.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or need assistance, please feel free to contact us.<br>
+    +91 74180 40613 , +91 78945 06123 <br> email to: jeyasuriyatravels@gmail.com , jeyasuriya10001@gmail.com </p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Travel and Tourism Management</p>
+</footer>
+<script>
+const videoContainer = document.querySelector(".video-container");
+const video = document.getElementById("intro-video");
+const mainContent = document.querySelector(".main-content");
+
+
+if (sessionStorage.getItem("introPlayed")) {
+    
+    videoContainer.style.display = "none";
+    document.body.classList.remove("no-scroll"); 
+    mainContent.style.display = "block";
+    mainContent.style.opacity = "1"; 
+} else {
+   
+    sessionStorage.setItem("introPlayed", "true");
+
+    
+    video.onended = () => {
+        videoContainer.style.opacity = "0"; 
+        setTimeout(() => {
+            videoContainer.style.display = "none"; 
+            document.body.classList.remove("no-scroll"); 
+            mainContent.style.display = "block"; 
+            setTimeout(() => {
+                mainContent.style.opacity = "1"; 
+            }, 100);
+        }, 1000); 
+    };
+}
+
+
+ document.querySelector('.intro-video').addEventListener('ended', function () {
+            document.querySelector('.intro-container').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+
+            let airplane = document.querySelector('.airplane');
+            airplane.style.animation = "flyAcross 5s linear forwards";
+        });
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+
+    setTimeout(showSlides, 3000);
+}
+</script>
+
+</body>
+</html>

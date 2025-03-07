@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: black;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Intro Video Container */
+        .intro-container {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .intro-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Hide Intro After Playing */
+        .hide-intro {
+            display: none;
+        }
+
+        /* Background Video */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+
+        /* Content */
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            background-color: rgb(80, 196, 217);
+            padding: 20px;
+            font-size: 2rem;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10; /* Ensures it stays above the video */
+        }
+
+        /* Main Content Section */
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 50px;
+        }
+
+        /* Tour Package Slider */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            margin: 50px auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8); /* Light transparent effect */
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .package-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .package {
+            flex: 0 0 100%;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .package img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .package:hover {
+            transform: scale(1.05);
+        }
+
+        /* Caption */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Navigation Arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: black;
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .left-arrow {
+            left: 15px;
+        }
+
+        .right-arrow {
+            right: 15px;
+        }
+        /* Booking Button */
+        .booking-button {
+            display: block;
+            width: 300px;
+            margin: 50px auto;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background: #ff5733;
+            color: white;
+            border-radius: 10px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .booking-button:hover {
+            background: #e04d2c;
+            transform: scale(1.05);
+        }
+
+        .booking-button:active {
+            transform: scale(0.95);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Intro Video -->
+    <div class="intro-container">
+        <video id="introVideo" autoplay muted>
+            <source src="assests/7a75d98ae94c854233810cf8a3b9083d.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+     <!-- Background Video -->
+     <div class="video-container">
+        <video autoplay loop muted>
+            <source src="assests/8142464f05665f6e31230366a04a45e1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <header>
+        <h3>Explore Our Tour Packages</h3>
+    </header>
+
+    <div class="slider-container">
+        <button class="arrow left-arrow" onclick="changeSlide(-1)">❮</button>
+
+        <div class="package-slider">
+            <div class="package">
+                <img src="assests/paris_img.webp" alt="Paris">
+                <div class="caption">Paris, France</div>
+            </div>
+            <div class="package">
+                <img src="assests/bali_jpg.jpg" alt="Bali">
+                <div class="caption">Bali, Indonesia</div>
+            </div>
+            <div class="package">
+                <img src="assests/maldives_img.jpg" alt="Maldives">
+                <div class="caption">Maldives</div>
+            </div>
+            <div class="package">
+                <img src="assests/dubai_img.jpg" alt="Dubai">
+                <div class="caption">Dubai, UAE</div>
+            </div>
+            <div class="package">
+                <img src="assests/switzerlands_img.jpg" alt="Switzerland">
+                <div class="caption">Switzerland</div>
+            </div>
+        </div>
+
+        <button class="arrow right-arrow" onclick="changeSlide(1)">❯</button>
+    </div>
+    <a href="visitweb.htm" class="booking-button">coustamize Your Trip</a>
+
+    <script>
+        let index = 0;
+
+function changeSlide(direction) {
+    const slider = document.querySelector('.package-slider');
+    const packages = document.querySelectorAll('.package');
+    const totalSlides = packages.length;
+
+    index += direction;
+
+    if (index < 0) {
+        index = totalSlides - 1;
+    } else if (index >= totalSlides) {
+        index = 0;
+    }
+
+    slider.style.transform = `translateX(-${index * 100}%)`;
+
+}
+ // Hide intro after video plays once
+ document.getElementById("introVideo").addEventListener("ended", function () {
+            document.querySelector(".intro-container").classList.add("hide-intro");
+        });
+          // Disable Scrolling While Intro Plays
+          document.body.style.overflow = "hidden";
+
+document.getElementById("introVideo").addEventListener("ended", function () {
+    document.querySelector(".intro-container").classList.add("hide-intro");
+    document.body.style.overflow = "auto"; // Enable scrolling after intro ends
+});
+    </script>
+
+</body>
+</html>
